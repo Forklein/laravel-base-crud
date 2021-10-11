@@ -12,7 +12,7 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Comic $comics)
+    public function index()
     {
         $comics = Comic::paginate(1);
         return view('comics.index', compact('comics'));
@@ -45,9 +45,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::findorfail($id);
+        // $comic = Comic::findorfail($id);
         return view('comics.show', compact('comic'));
     }
 
