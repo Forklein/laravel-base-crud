@@ -12,9 +12,9 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Comic $comics)
     {
-        $comics = Comic::All();
+        $comics = Comic::paginate(1);
         return view('comics.index', compact('comics'));
     }
 
@@ -45,9 +45,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $id)
     {
-        return view('comics.show');
+        return view('comics.show', compact('comic'));
     }
 
     /**
