@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comic;
 
-class HomeController extends Controller
+class ComicController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $comics = Comic::All();
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -45,7 +47,7 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('comics.show');
     }
 
     /**
