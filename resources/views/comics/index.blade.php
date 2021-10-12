@@ -3,7 +3,7 @@
 @section('title', 'Home')
 @section('content')
     <section>
-        <div class="container">
+        <div class="container mt-3">
             <table class="table">
                 <thead>
                   <tr>

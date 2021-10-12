@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-3">
     <form method="POST" action="{{ route('comics.store') }}">
         @csrf
         <div class="mb-3">

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Comics | @yield('title')</title>
 </head>
-<body>
+<body class="bg-dark bg-gradient">
     <header>
         @include('includes.header')
     </header>
@@ -15,6 +15,6 @@
         @yield('content')
     </main>
 
-    <script src="{{ asset('js/app.js')"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

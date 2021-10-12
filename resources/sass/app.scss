@@ -1,6 +1,16 @@
 //
 @import '~bootstrap/scss/bootstrap';
 
+body{
+    font-family:'Courier New', Courier, monospace;
+    color: cornflowerblue !important;
+}
+
+th,
+td{
+    color: cornflowerblue !important;
+}
+
 .pagination{
     justify-content: center !important;
 }
