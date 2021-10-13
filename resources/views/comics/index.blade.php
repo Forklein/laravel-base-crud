@@ -24,6 +24,7 @@
                             <td>{{$comic->series}}</td>
                             <td>{{$comic->sale_date}}</td>
                             <td>{{$comic->type}}</td>
+                            <th scope="col"><a href="{{ route('comics.edit', $comic->id) }}"><button>EDIT</button></th></a>
                         </tr>
                     @empty
                         <h1 class="text-center">Nessun dato</h1>
