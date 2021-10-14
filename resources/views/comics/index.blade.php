@@ -4,14 +4,17 @@
 @section('content')
     <section>
         <div class="container mt-3">
-            @if (session('delete'))
+            @if (session('trash'))
             <div class="alert alert-success" role="alert">
-                <p>Eliminato con successo {{session('delete')}}</p>
+                <p><strong>{{session('trash')}}</strong> spostato nel cestino </p>
             </div>
-            @endif
-            @if (session('restore'))
+            @elseif (session('restore'))
             <div class="alert alert-success" role="alert">
-                <p>Ripristinato con successo {{session('restore')}}</p>
+                <p><strong>{{session('restore')}}</strong> ripristinato con successo</p>
+            </div>
+            @elseif (session('delete'))
+            <div class="alert alert-danger" role="alert">
+                <p><strong>{{session('delete')}}</strong> eliminato definitivamente</p>
             </div>
             @endif
             <table class="table">
@@ -64,8 +67,4 @@
             </div>
         </div>
     </section>
-@endsection
-
-@section('scripts')
-<script src="{{asset('js/confirm.js')}}"></script>
 @endsection

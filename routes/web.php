@@ -19,5 +19,7 @@ Route::get('/', function () {
 
 Route::get('/comics/trash', 'ComicController@trash')->name('comics.trash');
 Route::patch('/comics/{comic}/restore', 'ComicController@restore')->name('comics.restore');
+Route::delete('/comics/{comic}/delete', 'ComicController@delete')->name('comics.delete');
+
 
 Route::resource('comics', 'ComicController');
