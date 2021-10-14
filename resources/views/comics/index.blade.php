@@ -54,7 +54,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <a class="text-white fw-bold" href="{{route('comics.trash')}}">Trash <i class="far fa-trash-alt"></i></a>
+                    <a class="text-white fw-bold text-decoration-none p-1" id="trash" href="{{route('comics.trash')}}">Trash <i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
         </div>

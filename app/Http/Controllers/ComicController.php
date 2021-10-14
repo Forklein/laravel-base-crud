@@ -108,6 +108,8 @@ class ComicController extends Controller
 
     public function restore($id)
     {
-        //
+        $comic = Comic::withTrashed()->find($id);
+        $comic->restore();
+        return redirect()->route('comics.index');
     }
 }

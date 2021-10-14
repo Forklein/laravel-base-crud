@@ -1,6 +1,11 @@
 body{
     font-size: 18px;
 }
+
+#trash:hover{
+    border-bottom: 5px solid #fff;
+}
+
 //Utilities
 .pagination{
     justify-content: center !important;

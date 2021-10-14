@@ -16,7 +16,11 @@
                             <p>{{$comic->type}}</p>
                             <div class="d-flex justify-content-between">
                                 <button class="btn btn-danger">DELETE</button>
-                                <button class="btn btn-success">RESTORE</button>
+                                <form method="POST" action="{{ route('comics.restore', $comic->id) }}">
+                                    @method('PATCH')
+                                    @csrf
+                                    <button class="btn btn-success">RESTORE</button>
+                                </form>
                             </div>
                           @empty
                             <h1 class="text-center">Nessun Comics nel cestino</h1>

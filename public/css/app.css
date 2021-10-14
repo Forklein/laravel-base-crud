@@ -11247,6 +11247,10 @@ body {
   font-size: 18px;
 }
 
+#trash:hover {
+  border-bottom: 5px solid #fff;
+}
+
 .pagination {
   justify-content: center !important;
 }
