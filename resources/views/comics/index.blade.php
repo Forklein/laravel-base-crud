@@ -18,26 +18,36 @@
                     <th scope="col">Series</th>
                     <th scope="col">Sale Date</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                     @forelse ($comics as $comic)
                         <tr>
                             <th scope="row">{{$loop->iteration}}</th>
-                            <td><a href="{{ route('comics.show', $comic->id) }}">{{$comic->title}}</a></td>
+                            <td>{{$comic->title}}</td>
                             <td>{{$comic->price}}</td>
                             <td>{{$comic->series}}</td>
                             <td>{{$comic->sale_date}}</td>
                             <td>{{$comic->type}}</td>
-                            <th scope="col"><a href="{{ route('comics.edit', $comic->id) }}"><button class="btn btn-primary">EDIT</button></th></a>
-                            <th scope="col">
-                                <form method="POST" action="{{ route('comics.destroy', $comic->id)}}">
+                            <td class="d-flex justify-content-between align-items-center">
+                                <a href="{{ route('comics.edit', $comic->id) }}">
+                                    <button class="btn btn-warning">EDIT</button>
+                                </a>
+                                <form method="POST" action="{{ route('comics.destroy', $comic->id)}}" data-title="{{ $comic->title }}" class="delete">
                                     @method('DELETE')
                                     @csrf
-                                <button type="submit" class="btn btn-primary">DELETE</button>
+                                    <button type="submit" class="btn btn-danger">DELETE</button>
                                 </form>
-                            </th>
-
+                                <form method="POST" action="{{ route('comics.destroy', $comic->id)}}">
+                                    @method('PATCH')
+                                    @csrf
+                                    <button type="submit" class="btn btn-info">TRASH</button>
+                                </form>
+                                <a href="{{ route('comics.show', $comic->id) }}">
+                                    <i class="fas fa-info-circle text-white"></i>
+                                </a>
+                            </td>
                         </tr>
                     @empty
                         <h1 class="text-center">Nessun dato</h1>
@@ -47,4 +57,8 @@
               {{$comics->links()}}
         </div>
     </section>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/confirm.js')}}"></script>
 @endsection

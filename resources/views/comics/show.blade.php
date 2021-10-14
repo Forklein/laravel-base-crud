@@ -16,13 +16,17 @@
                 </div>
                 <div class="card-footer d-flex">
                     <a href="{{url()->previous()}}"><button class="btn btn-primary">BACK</button></a>
-                    <form method="POST" action="{{ route('comics.destroy', $comic->id)}}">
+                    <form method="POST" action="{{ route('comics.destroy', $comic->id)}}" data-title="{{ $comic->title }}" class="delete">
                         @method('DELETE')
                         @csrf
-                    <button type="submit" class="btn btn-primary ms-2">DELETE</button>
+                    <button type="submit" class="btn btn-danger ms-2">DELETE</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script src="{{asset('js/confirm.js')}}"></script>
 @endsection
