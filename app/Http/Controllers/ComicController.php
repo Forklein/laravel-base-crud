@@ -97,7 +97,7 @@ class ComicController extends Controller
     {
         // Comic::destroy($comic);
         $comic->delete();
-        return redirect()->route('comics.index')->with('title', $comic->title);
+        return redirect()->route('comics.index')->with('delete', $comic->title);
     }
 
     public function trash()
@@ -110,6 +110,6 @@ class ComicController extends Controller
     {
         $comic = Comic::withTrashed()->find($id);
         $comic->restore();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('restore', $comic->title);
     }
 }

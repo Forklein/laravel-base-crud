@@ -4,9 +4,14 @@
 @section('content')
     <section>
         <div class="container mt-3">
-            @if (session('title'))
+            @if (session('delete'))
             <div class="alert alert-success" role="alert">
-                <p>Eliminato con successo {{session('title')}}</p>
+                <p>Eliminato con successo {{session('delete')}}</p>
+            </div>
+            @endif
+            @if (session('restore'))
+            <div class="alert alert-success" role="alert">
+                <p>Ripristinato con successo {{session('restore')}}</p>
             </div>
             @endif
             <table class="table">
