@@ -39,11 +39,6 @@
                                     @csrf
                                     <button type="submit" class="btn btn-danger">DELETE</button>
                                 </form>
-                                <form method="POST" action="{{ route('comics.destroy', $comic->id)}}">
-                                    @method('PATCH')
-                                    @csrf
-                                    <button type="submit" class="btn btn-info">TRASH</button>
-                                </form>
                                 <a href="{{ route('comics.show', $comic->id) }}">
                                     <i class="fas fa-info-circle text-white"></i>
                                 </a>
@@ -55,6 +50,13 @@
                 </tbody>
               </table>
               {{$comics->links()}}
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a class="text-white fw-bold" href="{{route('comics.trash')}}">Trash <i class="far fa-trash-alt"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
