@@ -12,18 +12,18 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Series</th>
-                    <th scope="col">Sale Date</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Action</th>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Series</th>
+                    <th>Sale Date</th>
+                    <th>Type</th>
+                    <th class="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                     @forelse ($comics as $comic)
-                        <tr>
+                        <tr class="text-white">
                             <th scope="row">{{$loop->iteration}}</th>
                             <td>{{$comic->title}}</td>
                             <td>{{$comic->price}}</td>
@@ -37,7 +37,7 @@
                                 <form method="POST" action="{{ route('comics.destroy', $comic->id)}}" data-title="{{ $comic->title }}" class="delete">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                    <button type="submit" class="btn btn-danger">MOVE TO TRASH</button>
                                 </form>
                                 <a href="{{ route('comics.show', $comic->id) }}">
                                     <i class="fas fa-info-circle text-white"></i>
