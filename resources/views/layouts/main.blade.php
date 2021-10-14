@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <title>Comics | @yield('title')</title>
+    @yield('cdns')
 </head>
 <body class="bg-dark bg-gradient">
     <header>

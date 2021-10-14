@@ -4,6 +4,11 @@
 @section('content')
     <section>
         <div class="container mt-3">
+            @if (session('title'))
+            <div class="alert alert-success" role="alert">
+                <p>Eliminato con successo {{session('title')}}</p>
+            </div>
+            @endif
             <table class="table">
                 <thead>
                   <tr>

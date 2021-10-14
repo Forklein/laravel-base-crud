@@ -95,7 +95,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
+        // Comic::destroy($comic);
         $comic->delete();
-        return redirect()->route('comics.index');
+        return redirect()->route('comics.index')->with('title', $comic->title);
     }
 }
