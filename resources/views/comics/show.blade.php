@@ -11,11 +11,16 @@
                 </div>
             </div>
             <div class="col-10">
-                <div class="card-body">
+                <div class="card-body text-black-50">
                     <p class="card-text">{{$comic->description}}</p>
                 </div>
-                <div class="card-footer text-center">
-                    <a href="{{url()->previous()}}"><button class="btn btn-primary">Back</button></a>
+                <div class="card-footer d-flex">
+                    <a href="{{url()->previous()}}"><button class="btn btn-primary">BACK</button></a>
+                    <form method="POST" action="{{ route('comics.destroy', $comic->id)}}">
+                        @method('DELETE')
+                        @csrf
+                    <button type="submit" class="btn btn-primary ms-2">DELETE</button>
+                    </form>
                 </div>
             </div>
         </div>
