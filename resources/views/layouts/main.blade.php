@@ -8,7 +8,7 @@
     <title>Comics | @yield('title')</title>
     @yield('cdns')
 </head>
-<body class="bg-dark bg-gradient">
+<body class="bg-main">
     <header>
         @include('includes.header')
     </header>

@@ -1,0 +1,22 @@
+body{
+    font-size: 18px;
+    color: #fff;
+}
+
+tr{
+    color: #fff;
+}
+
+//Utilities
+.pagination{
+    justify-content: center !important;
+}
+
+.bg-main{
+    background-color:darkslateblue;
+}
+
+.active{
+    border-bottom: 5px solid darkslateblue !important;
+}
+

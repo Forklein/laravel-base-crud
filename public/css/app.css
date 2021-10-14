@@ -11244,15 +11244,22 @@ textarea.form-control-lg {
   }
 }
 body {
-  font-family: "Courier New", Courier, monospace;
-  color: cornflowerblue !important;
+  font-size: 18px;
+  color: #fff;
 }
 
-th,
-td {
-  color: cornflowerblue !important;
+tr {
+  color: #fff;
 }
 
 .pagination {
   justify-content: center !important;
+}
+
+.bg-main {
+  background-color: darkslateblue;
+}
+
+.active {
+  border-bottom: 5px solid darkslateblue !important;
 }
