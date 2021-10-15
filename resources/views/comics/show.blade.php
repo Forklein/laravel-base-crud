@@ -12,9 +12,10 @@
             </div>
             <div class="col-10">
                 <div class="card-body text-black-50">
+                    <h3>Description</h3>
                     <p class="card-text">{{$comic->description}}</p>
                 </div>
-                <div class="card-footer d-flex">
+                <div class="card-footer d-flex justify-content-center">
                     <a href="{{url()->previous()}}"><button class="btn btn-primary">BACK</button></a>
                     <form method="POST" action="{{ route('comics.destroy', $comic->id)}}" data-title="{{ $comic->title }}" class="delete">
                         @method('DELETE')

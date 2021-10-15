@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-body text-black text-center my-3">
                             <div class="info">
-                                <h2>{{$comic->title}}</h2>
+                                <h3>{{$comic->title}}</h3>
                                 <p>Price: {{$comic->price}}</p>
                                 <p>Series: {{$comic->series}}</p>
                                 <p>Sale_date: {{$comic->sale_date}}</p>
@@ -30,7 +30,11 @@
                                 </form>
                             </div>
                             @empty
-                            <h1 class="text-center">Nessun Comics nel cestino</h1>
+                            <div class="card col-3 mx-auto">
+                                <div class="card-body">
+                                    <h3 class="text-center">Nessun Comics nel cestino</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
