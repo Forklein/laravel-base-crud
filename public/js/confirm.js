@@ -1,6 +1,6 @@
 const deleteElement = document.querySelectorAll('.delete');
 deleteElement.forEach(form => {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function (e, message) {
         const name = form.getAttribute('data-title');
         e.preventDefault();
         const answer = window.confirm(`Are you sure you want to delete permanently ${name}`);
