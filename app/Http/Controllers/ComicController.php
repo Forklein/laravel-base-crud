@@ -42,7 +42,7 @@ class ComicController extends Controller
             'title' => 'required|unique:comics|max:255',
             'price' => 'required|numeric',
             'series' => 'required|min:3|max:255',
-            'sale_date' => 'required|date',
+            'sale_date' => 'required|date|before:tomorrow|size:10',
             'type' => 'required|min:3|max:255',
         ]);
         $data = $request->all();
@@ -95,7 +95,7 @@ class ComicController extends Controller
             'title' => ['required', Rule::unique('comics')->ignore($comic->id), 'max:255'],
             'price' => 'required|numeric',
             'series' => 'required|string|min:3|max:255',
-            'sale_date' => 'required|date',
+            'sale_date' => 'required|date|before:tomorrow|size:10',
             'type' => 'required|string|min:3|max:255',
         ]);
         $data = $request->all();
