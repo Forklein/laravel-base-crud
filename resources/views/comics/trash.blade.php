@@ -29,11 +29,11 @@
                                     <button class="btn btn-success">RESTORE</button>
                                 </form>
                             </div>
+                            @empty
+                            <h1 class="text-center">Nessun Comics nel cestino</h1>
                         </div>
                     </div>
                 </div>
-                @empty
-                    <h1 class="text-center">Nessun Comics nel cestino</h1>
                 @endforelse
             </div>
         </div>

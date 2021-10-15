@@ -13,9 +13,10 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comics = Comic::paginate(5);
+        $search = $request->query('search');
+        $comics = Comic::where('title', 'LIKE', "%$search")->paginate(5);
         return view('comics.index', compact('comics'));
     }
 
@@ -123,14 +124,14 @@ class ComicController extends Controller
 
     public function restore($id)
     {
-        $comic = Comic::withTrashed()->find($id);
+        $comic = Comic::onlyTrashed()->find($id);
         $comic->restore();
         return redirect()->route('comics.index')->with('restore', $comic->title);
     }
 
     public function delete($id)
     {
-        $comic = Comic::withTrashed()->find($id);
+        $comic = Comic::onlyTrashed()->find($id);
         $comic->forceDelete();
         return redirect()->route('comics.index')->with('delete', $comic->title);
     }
