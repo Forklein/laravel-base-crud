@@ -16,7 +16,7 @@ class ComicController extends Controller
     public function index(Request $request)
     {
         $search = $request->query('search');
-        $comics = Comic::where('title', 'LIKE', "%$search")->paginate(5);
+        $comics = Comic::where('title', 'LIKE', "%$search%")->paginate(5);
         return view('comics.index', compact('comics'));
     }
 
