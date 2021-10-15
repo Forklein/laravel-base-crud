@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic;
+use Illuminate\Validation\Rule;
 
 class ComicController extends Controller
 {
@@ -90,11 +91,11 @@ class ComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         $request->validate([
-            'title' => 'required|unique:comics|max:255',
+            'title' => ['required', Rule::unique('comics')->ignore($comic->id), 'max:255'],
             'price' => 'required|numeric',
-            'series' => 'required|min:3|max:255',
+            'series' => 'required|string|min:3|max:255',
             'sale_date' => 'required|date',
-            'type' => 'required|min:3|max:255',
+            'type' => 'required|string|min:3|max:255',
         ]);
         $data = $request->all();
         $comic->update($data);
