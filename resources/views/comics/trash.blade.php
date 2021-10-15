@@ -15,7 +15,7 @@
                                 <p>Series: {{$comic->series}}</p>
                                 <p>Sale_date: {{$comic->sale_date}}</p>
                                 <p>Type: {{$comic->type}}</p>
-                                <p>Deteted at: {{$comic->deleted_at}}</p>
+                                <p>Deteted at: {{$comic->getDeletedDate()}}</p>
                             </div>
                             <div class="d-flex justify-content-between">
                                 <form method="POST" data-title="{{$comic->title}}" class="delete" action="{{ route('comics.delete', $comic->id) }}">

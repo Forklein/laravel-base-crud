@@ -41,8 +41,8 @@
                                     <td>{{$comic->series}}</td>
                                     <td>{{$comic->sale_date}}</td>
                                     <td>{{$comic->type}}</td>
-                                    <td>{{$comic->getDate()}}</td>
-                                    <td>{{$comic->updated_at}}</td>
+                                    <td>{{$comic->getCreatedDate()}}</td>
+                                    <td>{{$comic->getUpdatedDate()}}</td>
                                     <td>
                                         <a href="{{ route('comics.show', $comic->id) }}">
                                             <i class="fas fa-info-circle fa-2x text-primary"></i>
