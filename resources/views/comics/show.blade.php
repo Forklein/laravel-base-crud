@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $comic->title)
+@section('title', '$comic->title')
 
 @section('content')
     <div class="container mt-3">
