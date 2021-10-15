@@ -9,11 +9,14 @@
                 <div class="col-3 d-flex">
                     <div class="card">
                         <div class="card-body text-black text-center my-3">
+                            <div class="info">
                                 <h2>{{$comic->title}}</h2>
-                                <p>{{$comic->price}}</p>
-                                <p>{{$comic->series}}</p>
-                                <p>{{$comic->sale_date}}</p>
-                                <p>{{$comic->type}}</p>
+                                <p>Price: {{$comic->price}}</p>
+                                <p>Series: {{$comic->series}}</p>
+                                <p>Sale_date: {{$comic->sale_date}}</p>
+                                <p>Type: {{$comic->type}}</p>
+                                <p>Deteted at: {{$comic->deleted_at}}</p>
+                            </div>
                             <div class="d-flex justify-content-between">
                                 <form method="POST" data-title="{{$comic->title}}" class="delete" action="{{ route('comics.delete', $comic->id) }}">
                                     @method('DELETE')
