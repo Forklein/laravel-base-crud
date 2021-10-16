@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light bg-dark">
-  <div class="container-fluid">
+  <div class="container">
     <div class="menu d-flex">
       <a class="navbar-brand text-white">Comics DC</a>
       <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : ''}}" aria-current="page" href="{{route('comics.index')}}">Home</a>
