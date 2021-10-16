@@ -78,8 +78,8 @@
                     <i class="fas fa-spinner fa-pulse"></i>
                 </div>
                 <div class="credit">
-                    <h1 class="font-monospace">Made by {{ $author }}</h1>
-                    <p class="font-monospace">Laravel Development</p>
+                    <p class="h3">Made by {{ $author }}</p>
+                    <p class="font-monospace m-0">Laravel Development</p>
                 </div>
                 <div class="box-icon m-3">
                     <i class="fas fa-spinner fa-pulse"></i>
