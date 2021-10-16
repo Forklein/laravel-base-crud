@@ -133,6 +133,6 @@ class ComicController extends Controller
     {
         $comic = Comic::onlyTrashed()->find($id);
         $comic->forceDelete();
-        return redirect()->route('comics.index')->with('delete', $comic->title);
+        return redirect()->route('comics.trash')->with('delete', $comic->title);
     }
 }
