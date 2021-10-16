@@ -15,7 +15,15 @@
                         <p><strong>{{session('restore')}}</strong> ripristinato con successo</p>
                     </div>
                     @endif
-                    <strong class="text-success">{{$comics->total()}} Total Element</strong>
+                    <details open>
+                        <summary><strong>Details</strong></summary>
+                        <div class="total-index">
+                            <strong class="text-success">{{$comics->total()}} Total Element</strong>
+                        </div>
+                        <div class="total-trash">
+                            <strong class="text-danger">{{$comics_trashed}} Element in trash</strong>
+                        </div>
+                    </details>
                     <table class="table mt-2">
                         <thead>
                           <tr>
