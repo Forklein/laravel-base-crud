@@ -17,6 +17,7 @@ class ComicController extends Controller
     {
         $search = $request->query('search');
         $comics = Comic::where('title', 'LIKE', "%$search%")->paginate(5);
+        // $comics_count = $comics->count();
         return view('comics.index', compact('comics'));
     }
 
@@ -65,9 +66,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        // $comic = Comic::findorfail($id);
+        $comic = Comic::withTrashed()->findOrFail($id);
+        // $comic = Comic::findorfail($id); Comic $comic dependy inj
         return view('comics.show', compact('comic'));
     }
 
@@ -77,8 +79,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
+    public function edit($id)
     {
+        $comic = Comic::withTrashed()->find($id);
         return view('comics.edit', compact('comic'));
     }
 
@@ -89,16 +92,18 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => ['required', Rule::unique('comics')->ignore($comic->id), 'max:255'],
+            'title' => ['required', Rule::unique('comics')->ignore($id), 'max:255'],
             'price' => 'required|numeric',
             'series' => 'required|string|min:3|max:255',
             'sale_date' => 'required|date|before:tomorrow|size:10',
             'type' => 'required|string|min:3|max:255',
         ]);
         $data = $request->all();
+        // $comic->update($data); !?? Richiede dependency injection Comic $comic
+        $comic = Comic::onlyTrashed()->find($id);
         $comic->update($data);
         return redirect()->route('comics.show', compact('comic'));
     }

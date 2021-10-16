@@ -1,4 +1,4 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css);@charset "UTF-8";
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css);@import url(https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,500&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11245,6 +11245,7 @@ textarea.form-control-lg {
 }
 body {
   font-size: 18px;
+  font-family: "Cabin", sans-serif;
 }
 
 #trash:hover {

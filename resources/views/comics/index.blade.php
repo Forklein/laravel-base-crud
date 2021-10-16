@@ -5,6 +5,7 @@
     <section>
         <div class="card col-8 mx-auto shadow mt-5">
             <div class="card-body">
+                <strong class="text-success">{{$comics->total()}} Total Element</strong>
                 <div class="container mt-3">
                     @if (session('trash'))
                     <div class="alert alert-success" role="alert">
@@ -24,8 +25,8 @@
                             <th>Series</th>
                             <th>Sale Date</th>
                             <th>Type</th>
-                            <th>Creazione</th>
-                            <th>Modifica</th>
+                            <th>Create</th>
+                            <th>Edit</th>
                           </tr>
                         </thead>
                         <tbody>

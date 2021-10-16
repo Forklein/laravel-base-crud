@@ -28,6 +28,9 @@
                                     @csrf
                                     <button class="btn btn-danger">DELETE</button>
                                 </form>
+                                <a href="{{ route('comics.edit', $comic->id) }}">
+                                    <button class="btn btn-warning">EDIT</button>
+                                </a>
                                 <form method="POST" action="{{ route('comics.restore', $comic->id) }}">
                                     @method('PATCH')
                                     @csrf
