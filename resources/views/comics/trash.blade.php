@@ -4,9 +4,14 @@
 @section('content')
     <section>
         <div class="container mt-5">
+            @if (session('delete'))
+            <div class="alert alert-danger" role="alert">
+                <p><strong>{{session('delete')}}</strong> eliminato definitivamente</p>
+            </div>
+            @endif
             <div class="row">
                 @forelse($comics as $comic)
-                <div class="col-3 d-flex">
+                <div class="col-3">
                     <div class="card">
                         <div class="card-body text-black text-center my-3">
                             <div class="info">
@@ -29,13 +34,13 @@
                                     <button class="btn btn-success">RESTORE</button>
                                 </form>
                             </div>
-                            @empty
-                            <div class="card col-3 mx-auto">
-                                <div class="card-body">
-                                    <h3 class="text-center">Nessun Comics nel cestino</h3>
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                </div>
+                @empty
+                <div class="card col-3 mx-auto">
+                    <div class="card-body">
+                        <h3 class="text-center">Nessun Comics nel cestino</h3>
                     </div>
                 </div>
                 @endforelse

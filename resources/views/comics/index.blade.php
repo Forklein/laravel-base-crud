@@ -14,10 +14,6 @@
                     <div class="alert alert-success" role="alert">
                         <p><strong>{{session('restore')}}</strong> ripristinato con successo</p>
                     </div>
-                    @elseif (session('delete'))
-                    <div class="alert alert-danger" role="alert">
-                        <p><strong>{{session('delete')}}</strong> eliminato definitivamente</p>
-                    </div>
                     @endif
                     <table class="table">
                         <thead>
