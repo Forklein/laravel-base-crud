@@ -17,8 +17,9 @@ class ComicController extends Controller
     {
         $search = $request->query('search');
         $comics = Comic::where('title', 'LIKE', "%$search%")->paginate(5);
+        $author = 'Forklein';
         // $comics_count = $comics->count();
-        return view('comics.index', compact('comics'));
+        return view('comics.index', compact('comics', 'author'));
     }
 
     /**

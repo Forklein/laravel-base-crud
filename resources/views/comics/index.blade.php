@@ -5,7 +5,6 @@
     <section>
         <div class="card col-8 mx-auto shadow mt-5">
             <div class="card-body">
-                <strong class="text-success">{{$comics->total()}} Total Element</strong>
                 <div class="container mt-3">
                     @if (session('trash'))
                     <div class="alert alert-success" role="alert">
@@ -16,7 +15,8 @@
                         <p><strong>{{session('restore')}}</strong> ripristinato con successo</p>
                     </div>
                     @endif
-                    <table class="table">
+                    <strong class="text-success">{{$comics->total()}} Total Element</strong>
+                    <table class="table mt-2">
                         <thead>
                           <tr>
                             <th>#</th>
@@ -71,6 +71,18 @@
                             <a class="fw-bold text-decoration-none p-1" id="trash" href="{{route('comics.trash')}}">Trash <i class="far fa-trash-alt"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="card-footer d-flex justify-content-center align-items-center text-center">
+                <div class="box-icon m-3">
+                    <i class="fas fa-spinner fa-pulse"></i>
+                </div>
+                <div class="credit">
+                    <h1 class="font-monospace">Made by {{ $author }}</h1>
+                    <p class="font-monospace">Laravel Development</p>
+                </div>
+                <div class="box-icon m-3">
+                    <i class="fas fa-spinner fa-pulse"></i>
                 </div>
             </div>
         </div>

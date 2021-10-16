@@ -1,10 +1,11 @@
 body{
     font-size: 18px;
     font-family: 'Cabin', sans-serif;
+    height: 100vh;
 }
 
 #trash:hover{
-    border-bottom: 5px solid darkslateblue;
+    border-bottom: 5px solid #473d8a;
 }
 
 //Utilities
@@ -13,7 +14,7 @@ body{
 }
 
 .bg-main{
-    background-color:darkslateblue;
+    background: linear-gradient(#e66465, #473d8a);
 }
 
 .active{
